@@ -13,6 +13,7 @@ public class App {
         while (!exit) {
             System.out.println("1) Luo uusi kurssi, 2) Luo uusi opiskelija, 3) Listaa kurssit, 4) Listaa opiskelijat, 5) Lisää opiskelija kurssille, 6) Anna kurssiarvosanat, 7) Listaa kurssilla olevat opiskelijat, 8) Listaa opiskelijan arvosanat, 9) Listaa kaikkien kurssien kaikkien opiskelijoiden arvosanat, 0) Lopeta ohjelma");         
             int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
                     case 1:
                         System.out.println("Anna kurssin nimi:");
@@ -21,7 +22,6 @@ public class App {
                         String courseId = scanner.nextLine();
                         System.out.println("Anna kurssin maksimi opiskelijamäärä:");
                         int maxNumber = scanner.nextInt();
-                        scanner.nextLine();
                         Course course = new Course(courseName, courseId, maxNumber);
                         gifu.addCourse(course);
                         break;
