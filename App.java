@@ -2,6 +2,9 @@ import java.util.Scanner;
 import  java.util.ArrayList;
 public class App {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Tervetuloa Gifu-järjestelmään\nMille yliopistolle haluat ottaa järjestelmän käyttöön?");
@@ -40,13 +43,13 @@ public class App {
                 case 3:
                     ArrayList<Course> courses = gifu.getCourses();
                     if (courses.isEmpty()){
-                    System.out.println("Ei kurrseja."); // Typo in "Ei kursseja."
+                    System.out.println("Ei kurrseja."); 
                     } else{
                     for(Course c : courses){
                         System.out.println(c.getcourseId()+" "+c.getcourseName());
                     }
-                }
-            
+                    }
+                    break;
                 
                 case 4:
                     ArrayList<Student> students = gifu.getStudents();
