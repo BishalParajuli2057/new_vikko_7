@@ -43,5 +43,25 @@ public class Gifu {
     public ArrayList<Enrollment> getEnrollments() {
         return new ArrayList<>(enrollments);
     }
+    public String listCourses() {
+        if (courses.isEmpty()) {
+            return "Ei kursseja.";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (Course c : courses) {
+            sb.append(c.getcourseId()).append(" ").append(c.getcourseName()).append("\n");
+        }
+        return sb.toString();
+    }
+    public String listStudents() {
+        if (students.isEmpty()) {
+            return "Ei opiskelijoita.";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (Student s : students) {
+            sb.append(s.getstudentId()).append(" ").append(s.getstudentName()).append("\n");
+        }
+        return sb.toString();
+    }
 }
 
