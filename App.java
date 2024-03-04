@@ -56,13 +56,13 @@ public class App {
 
                         break;
     
-                case 0:
-                    System.out.println("Kiitos ohjelman käytöstä.");
-                    exit = true;
-                    break;
-                default:
-                    System.out.println("Väärä syöttö.");
-                    break;
+                    case 0:
+                        System.out.println("Kiitos ohjelman käytöstä.");
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Väärä syöttö.");
+                        break;
             }
         }
         scanner.close();
