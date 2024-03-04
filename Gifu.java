@@ -45,14 +45,18 @@ public class Gifu {
     }
     public String listCourses() {
         if (courses.isEmpty()) {
-            return "Ei kursseja.";
+            return "Ei kursseja."; // "No courses."
         }
-        StringBuilder sb = new StringBuilder();
-        for (Course c : courses) {
-            sb.append(c.getcourseId()).append(" ").append(c.getcourseName()).append("\n");
+        String result = "";
+        for (int i = 0; i < courses.size(); i++) {
+            Course c = courses.get(i);
+            // Concatenate the index, followed by the course ID and name to the result string
+            result += i + ") " + c.getcourseId() + " " + c.getcourseName() + "\n";
         }
-        return sb.toString();
+        return result;
     }
+    
+    
     public String listStudents() {
         if (students.isEmpty()) {
             return "Ei opiskelijoita.";
