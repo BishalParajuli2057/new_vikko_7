@@ -11,12 +11,10 @@ public class App {
         Gifu gifu = new Gifu();
     
         while (!exit) {
-            System.out.println("1) Luo uusi kurssi, 2) Luo uusi opiskelija, 3) Listaa kurssit, 4) Listaa opiskelijat, 5) Lisää opiskelija kurssille, 6) Anna kurssiarvosanat, 7) Listaa kurssilla olevat opiskelijat, 8) Listaa opiskelijan arvosanat, 9) Listaa kaikkien kurssien kaikkien opiskelijoiden arvosanat, 0) Lopeta ohjelma");         
-           if(scanner.hasNext()){ 
-                int choice = 0;
+            System.out.println("1) Luo uusi kurssi, 2) Luo uusi opiskelija, 3) Listaa kurssit, 4) Listaa opiskelijat, 5) Lisää opiskelija kurssille, 6) Anna kurssiarvosanat, 7) Listaa kurssilla olevat opiskelijat, 8) Listaa opiskelijan arvosanat, 9) Listaa kaikkien kurssien kaikkien opiskelijoiden arvosanat, 0) Lopeta ohjelma"); 
                 String stringInput = scanner.nextLine();
-                choice = Integer.parseInt(stringInput);
-                switch (choice) {
+                int choice1 = Integer.parseInt(stringInput);
+                switch (choice1) {
                     case 1:
                         System.out.println("Anna kurssin nimi:");
                         String courseName = scanner.nextLine();
@@ -64,8 +62,6 @@ public class App {
                         System.out.println("Väärä syöttö.");
                         break;
             }
-        }
-        scanner.close();
+        } scanner.close();
     }
     }
-    }  
