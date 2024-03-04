@@ -50,12 +50,10 @@ public class Gifu {
         String result = "";
         for (int i = 0; i < courses.size(); i++) {
             Course c = courses.get(i);
-            // Concatenate the index, followed by the course ID and name to the result string
             result += i + ") " + c.getcourseId() + " " + c.getcourseName() + "\n";
         }
         return result;
     }
-    
     
     public String listStudents() {
         if (students.isEmpty()) {
