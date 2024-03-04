@@ -22,8 +22,9 @@ public class App {
                         String courseId = scanner.nextLine();
 
                         System.out.println("Anna kurssin maksimi opiskelijamäärä:");
+                        scanner.hasNextInt();
                         int maxNumber = scanner.nextInt();
-                        
+
                         Course course = new Course(courseName, courseId, maxNumber);
                         gifu.addCourse(course);
                         break;
