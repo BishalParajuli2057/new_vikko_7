@@ -1,17 +1,15 @@
 import java.util.Scanner;
-import  java.util.ArrayList;
 public class App {
-
     /**
      * @param args
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        final Scanner scanner = new Scanner(System.in);
         System.out.println("Tervetuloa Gifu-järjestelmään\nMille yliopistolle haluat ottaa järjestelmän käyttöön?");
         String university = scanner.nextLine();
         Gifu gifu = new Gifu(); 
         boolean quit = false;
-
+    
         while (!quit) {
             System.out.println("1) Luo uusi kurssi, 2) Luo uusi opiskelija, 3) Listaa kurssit, 4) Listaa opiskelijat, 5) Lisää opiskelija kurssille, 6) Anna kurssiarvosanat, 7) Listaa kurssilla olevat opiskelijat, 8) Listaa opiskelijan arvosanat, 9) Listaa kaikkien kurssien kaikkien opiskelijoiden arvosanat, 0) Lopeta ohjelma");
             if (scanner.hasNextInt()){            
@@ -53,24 +51,24 @@ public class App {
                         System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero:");
                         int kurssichocie = scanner.nextInt();
                         scanner.nextLine();
-
                         System.out.println(gifu.listStudents());
                         System.out.println("Minkä opiskelijan haluat lisätä kurssille? Syötä opiskelijan numero:");
                         int studentchoice=scanner.nextInt();
                         scanner.nextLine();
 
                         break;
-
-                    case 0:
-                        quit=true;
-                        break;
-                    default:
-                        System.out.println("Kiitos ohjelman käytöstä.");
-                        break;
-                     }
-                }
+    
+                case 0:
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Kiitos ohjelman käytöstä.");
+                    break;
+            }
+        }
+    }
         scanner.close();
         System.out.println("Kiitos ohjelman käytöstä.");
-    }
-    }
+
+    }   
 }
