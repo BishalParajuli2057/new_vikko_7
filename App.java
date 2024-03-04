@@ -5,25 +5,23 @@ public class App {
      */
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
         System.out.println("Tervetuloa Gifu-järjestelmään\nMille yliopistolle haluat ottaa järjestelmän käyttöön?");
         String university = scanner.nextLine();
-        Gifu gifu = new Gifu(); 
-        boolean exit = false;
+        Gifu gifu = new Gifu();
     
         while (!exit) {
             System.out.println("1) Luo uusi kurssi, 2) Luo uusi opiskelija, 3) Listaa kurssit, 4) Listaa opiskelijat, 5) Lisää opiskelija kurssille, 6) Anna kurssiarvosanat, 7) Listaa kurssilla olevat opiskelijat, 8) Listaa opiskelijan arvosanat, 9) Listaa kaikkien kurssien kaikkien opiskelijoiden arvosanat, 0) Lopeta ohjelma");         
-                int choice = scanner.nextInt();
-                switch (choice) {
+            int choice = scanner.nextInt();
+            scanner.nextInt();
+            switch (choice) {
                     case 1:
                         System.out.println("Anna kurssin nimi:");
                         String courseName = scanner.nextLine();
-                        scanner.nextLine();
                         System.out.println("Anna kurssin ID:");
                         String courseId = scanner.nextLine();
-                        scanner.nextLine();
                         System.out.println("Anna kurssin maksimi opiskelijamäärä:");
                         int maxNumber = scanner.nextInt();
-                        scanner.nextLine(); 
 
                         Course course = new Course(courseName, courseId, maxNumber);
                         gifu.addCourse(course);
