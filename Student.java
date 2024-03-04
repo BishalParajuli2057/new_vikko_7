@@ -11,4 +11,10 @@ public class Student implements Printinfo {
     public String getInformation() {
         return "Student Name: " + name + ", ID: " + id;
     }
+    public String getstudentId(){
+        return id;
+    }
+    public String getstudentName(){
+        return name;
+    }
 }

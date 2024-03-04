@@ -8,4 +8,10 @@ public class Course {
         this.id=id;
         this.maxNumberOfStudents=maxNumberOfStudents;
     }
+    public String getcourseId(){
+        return id;
+    }
+    public String getcourseName(){
+        return name;
+    }
 }

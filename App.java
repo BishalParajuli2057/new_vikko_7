@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import  java.util.ArrayList;
 public class App {
 
     public static void main(String[] args) {
@@ -36,7 +36,45 @@ public class App {
                     Student student = new Student(studentName, studentId);
                     gifu.addStudent(student);
                     break;
+
+                case 3:
+                    ArrayList<Course> courses = gifu.getCourses();
+                    if (courses.isEmpty()){
+                    System.out.println("Ei kurrseja."); // Typo in "Ei kursseja."
+                    } else{
+                    for(Course c : courses){
+                        System.out.println(c.getcourseId()+" "+c.getcourseName());
+                    }
+                }
+            
                 
+                case 4:
+                    ArrayList<Student> students = gifu.getStudents();
+                    if (students.isEmpty()){
+                        System.out.println("ei opiskelijoita.");
+                    } else {
+                        for(Student s : students){
+                            System.out.println(s.getstudentId()+" "+s.getstudentName());
+                        }
+                    }
+                    break;
+                case 5:
+                    ArrayList<Course> courses2 = gifu.getCourses();
+                    for(int i = 0; i<courses2.size();i++){
+                        System.out.println(i+")"+courses2.get(i).getcourseId()+" "+courses2.get(i).getcourseName());
+                    }
+                    System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero:");
+                    int kurssichocie = scanner.nextInt();
+                    scanner.nextLine();
+
+                    ArrayList<Student> students2=gifu.getStudents();
+                    for(int a=0; a<students2.size();a++){
+                        System.out.println(a+")"+students2.get(a).getstudentId()+" "+students2.get(a).getstudentName());
+                    }
+                    System.out.println("Minkä opiskelijan haluat lisätä kurssille? Syötä opiskelijan numero:");
+                    int studentchoice=scanner.nextInt();
+                    scanner.nextLine();
+
                 case 0:
                     quit = true;
                     break;
